@@ -11,7 +11,7 @@ public class Person implements Serializable {
     private String name;
     private String nationality;
     private String ehtnicity;
-    private String birthdate;
+    private int age;
     private String gender;
 
     public String getName() {
@@ -38,12 +38,12 @@ public class Person implements Serializable {
         this.ehtnicity = ehtnicity;
     }
 
-    public String getBirthdate() {
-        return birthdate;
+    public int getAge() {
+        return age;
     }
 
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getGender() {

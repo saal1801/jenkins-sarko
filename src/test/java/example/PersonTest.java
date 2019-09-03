@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PersonTest {
     String name = "name";
-
+    int age = 10;
 
     @Test
     void getName() {
@@ -52,17 +52,17 @@ class PersonTest {
     }
 
     @Test
-    void getBirthdate() {
+    void getAge() {
         Person person = new Person();
-        person.setBirthdate(name);
-        assertTrue(person.getBirthdate().equals(name), "getBirthdate() failed");
+        person.setAge(age);
+        assertTrue(person.getAge() == age, "getBirthdate() failed");
     }
 
     @Test
-    void setBirthdate() {
+    void setAge() {
         Person person = new Person();
-        person.setBirthdate(name);
-        assertTrue(person.getBirthdate().equals(name), "setBirthdate() failed");
+        person.setAge(age);
+        assertTrue(person.getAge() == age , "setBirthdate() failed");
     }
 
     @Test
@@ -75,7 +75,7 @@ class PersonTest {
     @Test
     void setGender() {
         Person person = new Person();
-        person.setBirthdate(name);
-        assertTrue(person.getBirthdate().equals(name), "setBirthdate() failed");
+        person.setGender(name);
+        assertTrue(person.getGender().equals(name), "setBirthdate() failed");
     }
 }
