@@ -2,7 +2,7 @@ package example;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class Example1Test {
     private Example1 example1=new Example1();
