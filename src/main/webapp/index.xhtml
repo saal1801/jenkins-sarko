@@ -7,9 +7,21 @@
 <f:view>
     <h3>HELLO</h3>
     <h:form id="user-form">
-    <h:outputLabel for="username">User Name</h:outputLabel>
-    <h:inputText id="username" value="#{example1.name}" required="true" requiredMessage="Username is required"/><br/>
-    <h:commandButton id="submit-button" value="Submit" action="welcome"/>
+        <h:outputLabel for="username">User Name</h:outputLabel>
+        <h:inputText id="username" value="#{person.name}" required="true" requiredMessage="Username is required"/>
+        <br/>
+        <h:outputLabel for="nationality">Nationality</h:outputLabel>
+        <h:inputText id="nationality" value="#{person.nationality}" required="true" requiredMessage="Nationality is required"/>
+        <br/>
+        <h:outputLabel for="ehtnicity">Ethnicity</h:outputLabel>
+        <h:inputText id="ehtnicity" value="#{person.ehtnicity}" required="true" requiredMessage="Ethnicity is required"/>
+        <br/>
+        <h:outputLabel for="birthdate">Birthdate</h:outputLabel>
+        <h:inputText id="birthdate" value="#{person.birthdate}" required="true" requiredMessage="Birthdate is required"/>
+        <br/>
+
+        <br/>
+        <h:commandButton id="submit-button" value="Tell My Fortune" action="welcome"/>
     </h:form>
 </f:view>
 
