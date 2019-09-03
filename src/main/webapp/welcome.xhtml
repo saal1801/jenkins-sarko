@@ -6,6 +6,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, #{person.name}"/>
+    <h:outputLabel value="Hello, #{person.name}"/><br/>
+    <h:outputLabel value="#{person.nationality}"/><br/>
+    <h:outputLabel value="#{person.ehtnicity}"/><br/>
+    <h:outputLabel value="#{person.birthdate}"/><br/>
+    <h:outputLabel value="#{person.gender}"/><br/>
+    <h:commandButton id="back-button" value="Back" action="index"/>
 </f:view>
 </html>

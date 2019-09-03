@@ -19,7 +19,11 @@
         <h:outputLabel for="birthdate">Birthdate</h:outputLabel>
         <h:inputText id="birthdate" value="#{person.birthdate}" required="true" requiredMessage="Birthdate is required"/>
         <br/>
-
+        Gender:
+        <h:selectOneMenu value="#{person.gender}">
+            <f:selectItem itemValue="Male" itemLabel="Male"/>
+            <f:selectItem itemValue="Female" itemLabel="Female"/>
+        </h:selectOneMenu>
         <br/>
         <h:commandButton id="submit-button" value="Tell My Fortune" action="welcome"/>
     </h:form>
