@@ -10,7 +10,7 @@ class RandomFactorTest {
 
     @Test
     void randomBetween1And10() {
-        int num = 0;
+        int num = randomFactor.randomBetween1And10();
         assertTrue(num >= 1 && num <= 10, "Number between 1 and 10 failed");
     }
 }
