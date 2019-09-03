@@ -3,10 +3,11 @@ package example;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
 
 @ManagedBean
 @SessionScoped
-public class Person {
+public class Person implements Serializable {
     private String name;
     private String nationality;
     private String ehtnicity;
