@@ -23,14 +23,14 @@ public class TranslatorTest {
     @Test
     public void testgetMessageByName(){
         Person p = new Person();
-        p.setNamn("sandra");
+        p.setNamn("sara");
         Translator t = new Translator(p,0,0);
         assertTrue(t.getMessageByName().equalsIgnoreCase("Det var ett fint namn!"));
-        p.setNamn("marcus");
+        p.setNamn("karl");
         assertTrue(t.getMessageByName().equalsIgnoreCase("Ett ordentligt namn!"));
-        p.setNamn("a");
+        p.setNamn("christofer");
         assertTrue(t.getMessageByName().equalsIgnoreCase("Ja det ar ju ocksa ett okej namn"));
-        p.setNamn("e");
+        p.setNamn("josefin");
         assertTrue(t.getMessageByName().equalsIgnoreCase("Njea det namnet godkanner vi inte riktigt."));
     }
     
@@ -54,8 +54,8 @@ public class TranslatorTest {
         assertTrue(t.getMessageByGender().contains("Oj vilka stora m"));
         p.setKon("woman");
         assertTrue(t.getMessageByGender().contains("Vilket fint hår du ha"));
-        p.setKon("horse");
-        assertTrue(t.getMessageByGender().contains("HORSE IS NOT A"));
+        p.setKon("somethin");
+        assertTrue(t.getMessageByGender().contains("SOMETHING IS NOT A"));
         p.setKon("test");
         assertTrue(t.getMessageByGender().contains("Du ser bra ut idag"));
     }
@@ -68,11 +68,11 @@ public class TranslatorTest {
         assertTrue(t.getMessageByOccupation().contains("Du ar en del av framtide"));
         p.setJob("larare");
         assertTrue(t.getMessageByOccupation().contains("Du skapar framtidens ledar"));
-        p.setJob("eeeeee");
+        p.setJob("elev");
         assertTrue(t.getMessageByOccupation().contains("Oj du har en bra framtid du"));
-        p.setJob("aaaa");
+        p.setJob("grane");
         assertTrue(t.getMessageByOccupation().contains("Hoppas ditt jobb gar bra"));
-        p.setJob("ffff");
+        p.setJob("somOne");
         assertTrue(t.getMessageByOccupation().contains("Konstigt jobb det dar?"));
     }
     
@@ -81,7 +81,7 @@ public class TranslatorTest {
         Person p = new Person();
         p.setOld(55);
         p.setJob("programerare");
-        p.setNamn("sandra");
+        p.setNamn("sanna");
         p.setKon("woman");
         for(int x=0; x<100; x++){
             int random = (int)(Math.random()*4);
