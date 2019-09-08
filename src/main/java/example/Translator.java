@@ -30,19 +30,19 @@ public class Translator {
         
         switch(decidingFactor){
             
-            case 0:{//The name decides the message
+            case 0:{//Name message
                 mes=getMessageByName();
                 break;
             }
-            case 1:{//Age decides the message
+            case 1:{//Age message
                 mes=getMessageByAge();
                 break;
             }
-            case 2:{//occupasion decides the message
+            case 2:{//Occupasion message
                 mes=getMessageByOccupation();
                 break;
             }
-            case 3:{//gender decides the message
+            case 3:{//Gender message
                 mes=getMessageByGender();
                 break;
             }
@@ -74,27 +74,27 @@ public class Translator {
     }
 
     public String getMessageByGender() {
-        if(person.getGender().equalsIgnoreCase("horse"))
-            return "HORSE IS NOT A GENDER STUPID";
+        if(person.getGender().equalsIgnoreCase("man & woman"))
+            return "Man & Woman IS SEPARATE";
         else if (person.getGender().equalsIgnoreCase("man"))
-            return "Oj vilka stora muskler du har!";
+            return "hello man !";
         else if (person.getGender().equalsIgnoreCase("woman"))
-            return "Vilket fint hår du har";
+            return "Hello women";
         else
-            return "Du ser bra ut idag!";
+            return "Have a fun!";
     }
 
     public String getMessageByOccupation() {
         if(person.getJob().contains("prog"))
-            return "Du ar en del av framtiden du!";
+            return "See you better in the future!";
         else if (person.getJob().contains("rar"))
-            return "Du skapar framtidens ledare du!";
+            return "Continue!";
         else if (person.getJob().contains("e"))
-            return "Oj du har en bra framtid du!";
+            return "keep going on!";
         else if(person.getJob().contains("a"))
-            return "Hoppas ditt jobb gar bra!";
+            return "You see how beautiful is with programer!";
         else
-            return "Konstigt jobb det dar?";
+            return "It's happing something wrong?";
     }
 
 }
