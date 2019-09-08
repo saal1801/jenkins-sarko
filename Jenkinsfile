@@ -1,39 +1,52 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
+    agent any
+    parameters {
+        choice(name: 'DEPLOYMENT_ENVIRONMENT', choices: ['Build', 'Archive', 'Test'], description: 'The target environment to deploy artifacts')
     }
+
     stages {
+        stage('Clean') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Build') {
+            agent {
+                docker {
+                    image 'maven:3-alpine'
+                }
+            }
             steps {
                 sh 'mvn -B -DskipTests clean package'
-
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                    publishHTML([
+                            allowMissing         : false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll              : true,
+                            reportDir            : 'target/site/jacoco/',
+                            reportFiles          : 'index.html',
+                            reportTitles         : "Tests coverage",
+                            reportName           : "Tests coverage"
+                    ])
+                }
             }
         }
-        stage('Test') {
+        stage('Deploy to env') {
+            agent {
+                docker {
+                    image 'maven:3-alpine'
+                }
+            }
             steps {
-                sh 'mvn test'
+                sh 'mvn compile war:war'
             }
         }
     }
-
-        post {
-            always {
-                junit 'target/surefire-reports/*.xml'
-                publishHTML([
-                allowMissing    : false,
-                alwaysLinkToLastBuild : false,
-                keepAll : true,
-                reportDir : 'target/site/jacoco',
-                reportFiles : 'index.html',
-                reportTitles : "Tests coverage",
-                reportName : "Tests coverage"
-                ])
-            }
-            success {
-                archive "target/fortuneteller.war"
-            }
-        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3'))
+    }
 }
