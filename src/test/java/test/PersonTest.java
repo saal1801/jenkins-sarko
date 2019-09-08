@@ -23,13 +23,20 @@ public class PersonTest {
         for(int x=0; x<100; x++){
             p.generateMessage();
             assertTrue((p.getMessage().contains("Det var ett fint namn")) ||
-                    (p.getMessage().contains("Du ar i livets gyllende ar, vad")) ||
-                    (p.getMessage().contains("Vilket fint h")) ||
+                    (p.getMessage().contains("Du ar i livets gyllende ar")) ||
+                    (p.getMessage().contains("Du ser bra ut")) ||
                     (p.getMessage().contains("Du ar en del av fr")));
                     
         }
-   }
-
+        for(int x=0; x<100; x++){
+            p.generateMessage();
+            assertFalse((p.getMessage().contains("Ett ordentligt ")) ||
+                    (p.getMessage().contains("oj du var ga")) ||
+                    (p.getMessage().contains("SamOne IS NOT A GE")) ||
+                    (p.getMessage().contains("Konstigt jobb det")));
+                    
+        }
+ }
     
     @Test
     public void testsetMessage(){
