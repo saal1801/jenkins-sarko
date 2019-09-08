@@ -44,7 +44,7 @@ public class Person {
         return gender;
     }
 
-    public void setKon(String Gender) {
+    public void setGender(String Gender) {
         this.gender = Gender;
     }
     

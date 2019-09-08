@@ -16,8 +16,8 @@ public class PersonTest {
     public void testgenerateMessage(){
         Person p = new Person();
         p.setOld(50);
-        p.setNamn("name");
-        p.setKon("name 2");
+        p.setNamn("sara");
+        p.setGender("name2");
         p.setJob("programmerare");
         
         for(int x=0; x<100; x++){
@@ -28,15 +28,8 @@ public class PersonTest {
                     (p.getMessage().contains("Du ar en del av fr")));
                     
         }
-        for(int x=0; x<100; x++){
-            p.generateMessage();
-            assertFalse((p.getMessage().contains("Ett ordentligt ")) ||
-                    (p.getMessage().contains("oj du var ga")) ||
-                    (p.getMessage().contains("HORSE IS NOT A GE")) ||
-                    (p.getMessage().contains("Du skapar framtidens l")));
-                    
-        }
-    }
+   }
+
     
     @Test
     public void testsetMessage(){

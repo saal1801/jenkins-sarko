@@ -49,14 +49,14 @@ public class TranslatorTest {
     @Test
     public void testgetMessageByGender(){
         Person p = new Person();
-        p.setKon("man");
+        p.setGender("man");
         Translator t = new Translator(p,2,0);
         assertTrue(t.getMessageByGender().contains("Oj vilka stora m"));
-        p.setKon("woman");
+        p.setGender("woman");
         assertTrue(t.getMessageByGender().contains("Vilket fint hår du ha"));
-        p.setKon("somethin");
+        p.setGender("somethin");
         assertTrue(t.getMessageByGender().contains("SOMETHING IS NOT A"));
-        p.setKon("test");
+        p.setGender("test");
         assertTrue(t.getMessageByGender().contains("Du ser bra ut idag"));
     }
     
@@ -82,7 +82,7 @@ public class TranslatorTest {
         p.setOld(55);
         p.setJob("programerare");
         p.setNamn("sanna");
-        p.setKon("woman");
+        p.setGender("woman");
         for(int x=0; x<100; x++){
             int random = (int)(Math.random()*4);
             Translator t = new Translator(p,random,0);

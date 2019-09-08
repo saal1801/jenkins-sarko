@@ -10,15 +10,16 @@ package example;
 
 public class Translator {
     
-    private final Person person;
+private Person person;
     
     int decidingFactor;
-    int randomNr;
+    
+    int randomNumber;
 
-    public Translator(Person person, int decidingF, int randomNr) {
+    public Translator(Person person, int decidingFactor, int randomNumber) {
         this.person = person;
-        this.decidingFactor = decidingF;
-        this.randomNr = randomNr;
+        this.decidingFactor = decidingFactor;
+        this.randomNumber = randomNumber;
     }
     
     public String getTemporaryMessage(){
@@ -30,19 +31,19 @@ public class Translator {
         
         switch(decidingFactor){
             
-            case 0:{//Name message
+            case 0:{//The name decides the message
                 mes=getMessageByName();
                 break;
             }
-            case 1:{//Age message
+            case 1:{//Age decides the message
                 mes=getMessageByAge();
                 break;
             }
-            case 2:{//Occupasion message
+            case 2:{//occupasion decides the message
                 mes=getMessageByOccupation();
                 break;
             }
-            case 3:{//Gender message
+            case 3:{//gender decides the message
                 mes=getMessageByGender();
                 break;
             }
@@ -52,49 +53,50 @@ public class Translator {
     }
 
     public String getMessageByName() {
-     if(person.getNamn().contains("Sara")){
+     if(person.getNamn().contains("sara")){
          return "Det var ett fint namn!";
      }
-        else if (person.getNamn().contains("Karl"))
-            return "Karl is name!";
-        else if (person.getNamn().contains("aMartin"))
-            return "Marting is namn";
-        else
-         return "The name is not valid.";
+     else if (person.getNamn().contains("karl"))
+         return "Ett ordentligt namn!";
+     else if (person.getNamn().contains("christofer"))
+         return "Ja det ar ju ocksa ett okej namn";
+     else
+         return "Njea det namnet godkanner vi inte riktigt.";
     }
     
 
     public String getMessageByAge() {
         if(person.getOld() < 18)
-            return "You under 18";
+            return "Du ar inte gammal nog for att vara har!";
         else if (person.getOld() > 80)
-            return "You are older than 18!";
+            return "oj du var gammal du!";
         else
-            return "Your age are appropriated!";
+            return "Du ar i livets gyllende ar, vad trevligt!";
     }
 
     public String getMessageByGender() {
-        if(person.getGender().equalsIgnoreCase("man & woman"))
-            return "Man & Woman IS SEPARATE";
+        if(person.getGender().equalsIgnoreCase("somethin"))
+            return "SOMETHING IS NOT A";
         else if (person.getGender().equalsIgnoreCase("man"))
-            return "hello man !";
+            return "Oj vilka stora muskler du har!";
         else if (person.getGender().equalsIgnoreCase("woman"))
-            return "Hello women";
+            return "Vilket fint hår du har";
         else
-            return "Have a fun!";
+            return "Du ser bra ut idag!";
     }
 
     public String getMessageByOccupation() {
         if(person.getJob().contains("prog"))
-            return "See you better in the future!";
+            return "Du ar en del av framtiden du!";
         else if (person.getJob().contains("rar"))
-            return "Continue!";
-        else if (person.getJob().contains("e"))
-            return "keep going on!";
-        else if(person.getJob().contains("a"))
-            return "You see how beautiful is with programer!";
+            return "Du skapar framtidens ledare du!";
+        else if (person.getJob().contains("elev"))
+            return "Oj du har en bra framtid du!";
+        else if(person.getJob().contains("grane"))
+            return "Hoppas ditt jobb gar bra!";
         else
-            return "It's happing something wrong?";
+            return "Konstigt jobb det dar?";
     }
 
 }
+
