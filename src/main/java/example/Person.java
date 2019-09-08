@@ -71,22 +71,6 @@ public class Person {
         int randomNumber = RG.getOneRandomNumber();
         
         Translator t = new Translator(this, decidingFactor, randomNumber);
-        
-        
-        //UNcomment to see that the button works 
-//        if(namn.contains("marcus")){
-//            message="Ratt namn!";
-//        }
-//        else if (namn.contains("sandra")){
-//            message="Det var ett valdigt fint namn!";
-//        }
-//        else{
-//            message="Fel namn!";
-//        }
-
-        //Uncomment below to see that the proper things are put into the right variabels
-        //message+=", namn: " + namn + ", Ethnicity: " + Ethnicity + ", Nationality: " + Nationality + ", Ethnicity: " + Ethnicity;
-        
         message=t.getMessage();
     }
     
