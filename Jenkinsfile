@@ -5,11 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Clean') {
-            steps {
-                cleanWs()
-            }
-        }
         stage('Build') {
             agent {
                 docker {
@@ -32,6 +27,12 @@ pipeline {
                             reportTitles         : "Tests coverage",
                             reportName           : "Tests coverage"
                     ])
+                }
+                success {
+                    archiveArtifacts(artifacts: 'target/ALM2.war', onlyIfSuccessful: true)
+                }
+                cleanup{
+                        deleteDir()
                 }
             }
         }

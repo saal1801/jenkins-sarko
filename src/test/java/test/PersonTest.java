@@ -32,7 +32,7 @@ public class PersonTest {
             p.generateMessage();
             assertFalse((p.getMessage().contains("Ett ordentligt ")) ||
                     (p.getMessage().contains("oj du var ga")) ||
-                    (p.getMessage().contains("SamOne IS NOT A GE")) ||
+                    (p.getMessage().contains("SOMETHING IS NOT A")) ||
                     (p.getMessage().contains("Konstigt jobb det")));
                     
         }
